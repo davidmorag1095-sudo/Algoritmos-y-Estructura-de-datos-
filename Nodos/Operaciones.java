@@ -38,7 +38,18 @@ public class Operaciones
 	 public String imprimir()
 	 {
 		String mensaje = "";
-		
+		rec = primero;
+		if(primero == null)
+		{
+			mensaje = "La lista se encuentra vacia";
+		}else
+		{
+			while(rec !=null)
+			{
+				mensaje += rec.getDatos() + "\n";
+				rec = rec.getSiguiente();
+			}//Fin while
+		}
 		return mensaje;
 	 }//Fin del imprimir 
 	 //--------------------------------------------------------------
