@@ -45,6 +45,7 @@ public class Principal //Trabaja con Nodos enteros
 				break;
 				//--------------------------------------------------
 				case 5://Buscar
+					
 				break;
 				//--------------------------------------------------
 				case 6://Eliminar un elemento

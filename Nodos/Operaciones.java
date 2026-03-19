@@ -81,6 +81,11 @@ public class Operaciones
 		return mensaje; 
 	 }//Fin de agregarDespues
 	 //--------------------------------------------------------------
+	 /**public String buscar()
+	 {
+		
+	 }*/
+	 //--------------------------------------------------------------
 	 public String eliminar(int buscar)
 	 {
 		String mensaje = "";
