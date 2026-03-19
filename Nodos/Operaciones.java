@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 public class Operaciones
 {
 	Nodo primero, ultimo, nuevo, rec;
@@ -15,7 +16,7 @@ public class Operaciones
 		}else
 		{
 			nuevo.setSiguiente(primero);
-			primero = nuevo
+			primero = nuevo;
 		}
 	}//Fin del agregar al inicio
 	//--------------------------------------------------------------
@@ -30,7 +31,7 @@ public class Operaciones
 		else
 		{
 			ultimo.setSiguiente(nuevo);
-			ultimo = nuevo
+			ultimo = nuevo;
 		}
 		
 	}//Fin del agregar al final
@@ -53,10 +54,30 @@ public class Operaciones
 		return mensaje;
 	 }//Fin del imprimir 
 	 //--------------------------------------------------------------
-	 public String agregarDespues(int datos, int buscar)
+	 public String agregarDespues(int buscar, int nuevoDato)
 	 {
 		String mensaje = "";
-		
+		rec = primero;
+		if (primero == null)
+		{
+			mensaje = "La lista se encuentra vacia";
+		}else
+		{
+			while (rec != null)
+			{
+				if(rec.getDatos() == buscar)
+				{
+					nuevo = new Nodo(nuevoDato);
+					nuevo.setSiguiente(rec.getSiguiente());
+					rec.setSiguiente(nuevo);
+					mensaje = "Agregado correctamente";
+					break;
+				}else
+				{
+					rec = rec.getSiguiente();
+				}
+			}
+		}
 		return mensaje; 
 	 }//Fin de agregarDespues
 	 //--------------------------------------------------------------
