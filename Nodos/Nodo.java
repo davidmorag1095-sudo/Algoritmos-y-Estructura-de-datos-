@@ -3,6 +3,12 @@ public class Nodo
 	int datos;
 	Nodo siguiente;
 #--------------------------------------------------
+	public Nodo(int datos)
+	{
+		this.datos = datos;
+		siguiente = null;
+	}
+	#--------------------------------------------------
 	#Set/Gets 
 	public void setDatos(int datos)
 	{
