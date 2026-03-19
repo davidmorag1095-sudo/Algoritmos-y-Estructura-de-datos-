@@ -6,7 +6,7 @@ public class Nodo
 	public Nodo(int datos)
 	{
 		this.datos = datos;
-		siguiente = null
+		siguiente = null;
 	}
 	#--------------------------------------------------
 	#Set/Gets 
