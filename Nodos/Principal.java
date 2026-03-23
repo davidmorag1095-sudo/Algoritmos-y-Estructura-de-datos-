@@ -16,21 +16,34 @@ public class Principal //Trabaja con Nodos enteros
 																										+"\n4.Agregar despues de"
 																										+"\n5.Buscar"
 																										+"\n6.Eliminar un elemento"
-																										+"\n7Eliminar lista" 
+																										+"\n7.Eliminar lista" 
 																										+"\n8.Salir" ));
 			switch(opcion)
 			{
 				case 1: //Agregar al inicio
-					dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del Nodo: "));
-					operacion.agregarAlInicio(dato);
-					JOptionPane.showMessageDialog(null, "Agregado con exito");
+					try
+					{
+						dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del Nodo: "));
+						operacion.agregarAlInicio(dato);
+						JOptionPane.showMessageDialog(null, "Agregado con exito");
+					}catch(Exception error)
+					{
+						JOptionPane.showMessageDialog(null, "ERROR! ingrese datos para buscar!");
+					}
 				
 				break;
 				//--------------------------------------------------
 				case 2://Agregar al final
-					dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del Nodo"));
-					operacion.agregarAlFinal(dato);
-					JOptionPane.showMessageDialog(null, "Agregado al final con exito"); 
+					try
+					{
+						dato = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el numero del Nodo"));
+						operacion.agregarAlFinal(dato);
+						JOptionPane.showMessageDialog(null, "Agregado al final con exito"); 
+					
+					}catch(Exception error)
+					{
+						JOptionPane.showMessageDialog(null, "ERROR! ingrese datos para buscar!");
+					}
 				break;
 				//--------------------------------------------------
 				case 3: //Imprimir
@@ -38,20 +51,46 @@ public class Principal //Trabaja con Nodos enteros
 				break;
 				//--------------------------------------------------
 				case 4://.Agregar despues de
-					buscar = Integer.parseInt(JOptionPane.showInputDialog("Digite el nodo en el que desea agregar un nuevo nodo adelante"));
-					nuevoDato = Integer.parseInt(JOptionPane.showInputDialog("Digite el valor del Nodo a agregar"));
-					operacion.agregarDespues(buscar, nuevoDato);
-					JOptionPane.showMessageDialog(null, "Agregado correctamente");
+					try
+					{
+						buscar = Integer.parseInt(JOptionPane.showInputDialog("Digite el nodo en el que desea agregar un nuevo nodo adelante"));
+						nuevoDato = Integer.parseInt(JOptionPane.showInputDialog("Digite el valor del Nodo a agregar"));
+						operacion.agregarDespues(buscar, nuevoDato);
+						JOptionPane.showMessageDialog(null, "Agregado correctamente");
+					
+					
+					}catch(Exception error)
+					{
+						JOptionPane.showMessageDialog(null, "ERROR! ingrese datos para buscar!");
+					}
 				break;
 				//--------------------------------------------------
 				case 5://Buscar
-					
+					try
+					{
+						buscar = Integer.parseInt(JOptionPane.showInputDialog("Digite el nodo que desea buscar"));
+						operacion.buscar(buscar);
+						
+					}catch(Exception Error)
+					{
+						JOptionPane.showMessageDialog(null, "ERROR! ingrese datos para buscar!");
+					}
 				break;
 				//--------------------------------------------------
 				case 6://Eliminar un elemento
+					try
+					{
+						buscar = Integer.parseInt(JOptionPane.showInputDialog("Digite el nodo a eliminar")); 
+						operacion.eliminar(buscar);
+						JOptionPane.showMessageDialog(null, "Eliminado con exito!");
+					}catch(Exception error)
+					{
+						JOptionPane.showMessageDialog(null, "ERROR! ingrese datos para buscar!");
+					}
 				break;
 				//--------------------------------------------------
 				case 7://Eliminar lista
+					JOptionPane.showMessageDialog(null,operacion.eliminarLista());
 				break;
 				//--------------------------------------------------
 				case 8://Salir
@@ -62,7 +101,7 @@ public class Principal //Trabaja con Nodos enteros
 				default:
 					JOptionPane.showMessageDialog(null, "Opcion incorrecta");
 			}//Fin del switch 
-		}while (opcion != 7);
+		}while (opcion != 8);
 		
 		
 		

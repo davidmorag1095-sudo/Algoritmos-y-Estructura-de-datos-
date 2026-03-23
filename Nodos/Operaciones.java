@@ -81,16 +81,90 @@ public class Operaciones
 		return mensaje; 
 	 }//Fin de agregarDespues
 	 //--------------------------------------------------------------
-	 /**public String buscar()
+	 public String buscar(int buscar)
 	 {
-		
-	 }*/
+		String mensaje = "";
+		rec = primero;
+		boolean encontrado = false;
+		if (primero == null)
+		{
+			mensaje = "La lista se encuentra vacia, agregar datos a la lista para buscar";
+		}else
+		{
+				while(rec != null)
+				{
+					if(rec.getDatos() == buscar)
+					{
+						JOptionPane.showMessageDialog(null, rec.getDatos());
+						encontrado = true;
+					}
+					rec = rec.getSiguiente();
+				}
+		}
+		return mensaje;
+	 }
 	 //--------------------------------------------------------------
 	 public String eliminar(int buscar)
 	 {
 		String mensaje = "";
+		rec = primero;
+		Nodo anterior = null;
 		
+		if(primero == null)
+		{
+			mensaje = "ERROR! la lista esta vacia";
+		}else
+		{
+			if(primero.getDatos() == buscar)
+			{
+				primero = primero.getSiguiente();
+				if(primero == null)
+					{
+						ultimo = null;
+					}
+				mensaje = "Nodo eliminado correctamente"; 
+			}else
+			{
+				while(rec != null)
+				{
+					if(rec.getDatos() == buscar)
+					{
+						anterior.setSiguiente(rec.getSiguiente());
+						
+						if(rec == ultimo)
+						{
+							ultimo = anterior;
+						}
+						mensaje = "Nodo eliminado correctamente";
+						return mensaje;
+					}
+					anterior = rec;
+					rec = rec.getSiguiente();
+				}
+			}
+			mensaje = "ERROR! no se encontro nodo en la lista";
+		}
 		return mensaje = ""; 
 	 }//Fin del eliminar
+	 //--------------------------------------------------------------
+	 //Eliminar lista 
+	 public String eliminarLista()
+	 {
+		String mensaje = ""; 
+		rec = primero;
+		
+		if (primero  == null)
+		{
+			JOptionPane.showMessageDialog(null,"La lista esta vacia!");
+		}else
+		{
+			primero = null;
+			ultimo = null; 
+			mensaje = "Lista eliminada con exito!";
+		}
+		return mensaje;
+	 }
+	 
+	 
 	 
 }//Fin de la clase
