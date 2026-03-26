@@ -113,7 +113,7 @@ public class OperacionesTDALista
 		return -1;
 	}//Fin del localiza
 //--------------------------------------------
-		public int recuperar(int p)
+	public int recuperar(int p)
 	{
 		int posicion = 0; 
 		rec = primero;
@@ -122,14 +122,15 @@ public class OperacionesTDALista
 		{
 			if(rec.getDatos() == p)
 			{
-				return posicion;	
+				return rec.getDatos();	
 			}
 			rec = rec.getSiguiente();
 			posicion ++;
 		}
 		return -1;
 	}//Fin del localiza
-	
+//--------------------------------------------
+	public 
 	
 	
 	
